@@ -1,0 +1,34 @@
+# solana-audit
+
+> Solana-specific dependency auditor CLI. Catches abandoned packages, archived repos, deprecated SDKs, and known malicious packages that npm audit misses. Zero network requests, built-in registry, instant results.
+
+## Usage
+
+Install: `npx solana-audit`
+
+Scan current project: `npx solana-audit`
+JSON output for CI: `npx solana-audit --json`
+Auto-fix overrides: `npx solana-audit --fix`
+Filter by severity: `npx solana-audit --severity high`
+
+## What it catches
+
+- Compromised npm versions (@solana/web3.js 1.95.6-1.95.7 supply chain attack)
+- CVEs (bigint-buffer CVE-2025-3194, elliptic CVE-2025-14505)
+- Abandoned packages (@solana/buffer-layout-utils archived Jan 2025)
+- Deprecated SDKs (@metaplex-foundation/js, @project-serum/*)
+- Superseded frameworks (@solana/web3.js v1 → @solana/kit)
+- Known malicious packages (solana-systemprogram-utils typosquatting)
+
+## Programmatic API
+
+```typescript
+import { scan, formatJson } from "solana-audit";
+const result = scan("./path/to/project");
+console.log(formatJson(result));
+```
+
+## Related
+
+- [bigint-buffer-safe](https://github.com/LoserLab/bigint-buffer-safe): Fix for CVE-2025-3194
+- [solana-codemod](https://github.com/LoserLab/solana-codemod): Automated v1 to v2 migration
