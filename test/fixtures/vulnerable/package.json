@@ -1,0 +1,16 @@
+{
+  "name": "vulnerable-project",
+  "version": "1.0.0",
+  "dependencies": {
+    "@solana/web3.js": "^1.95.6",
+    "bigint-buffer": "^1.1.5",
+    "elliptic": "^6.5.4",
+    "@project-serum/anchor": "^0.26.0",
+    "@metaplex-foundation/js": "^0.19.0",
+    "@solana/buffer-layout-utils": "^2.0.0",
+    "@solana/wallet-adapter-react": "^0.15.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}

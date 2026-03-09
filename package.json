@@ -1,0 +1,54 @@
+{
+  "name": "solana-audit",
+  "version": "0.1.0",
+  "description": "Solana-specific dependency auditor. Catches abandoned packages, archived repos, and deprecated APIs that npm audit misses.",
+  "bin": {
+    "solana-audit": "./dist/bin/solana-audit.js"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit"
+  },
+  "keywords": [
+    "solana",
+    "audit",
+    "security",
+    "dependencies",
+    "deprecated",
+    "cve",
+    "solana-kit",
+    "web3.js"
+  ],
+  "author": "heathen",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/loserlab/solana-audit"
+  },
+  "dependencies": {
+    "commander": "^13.0.0",
+    "semver": "^7.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/semver": "^7.5.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0",
+    "vitest": "^3.0.0"
+  }
+}

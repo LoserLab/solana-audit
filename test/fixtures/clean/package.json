@@ -1,0 +1,11 @@
+{
+  "name": "clean-project",
+  "version": "1.0.0",
+  "dependencies": {
+    "@solana/kit": "^3.0.0",
+    "@solana/connector": "^1.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}

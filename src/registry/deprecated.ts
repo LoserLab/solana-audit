@@ -1,0 +1,62 @@
+import type { Rule } from "./types";
+
+export const deprecatedRules: Rule[] = [
+  {
+    package: "@solana/buffer-layout-utils",
+    versions: "*",
+    severity: "high",
+    title: "Package archived, no longer maintained",
+    detail: "Repository was archived on January 8, 2025. No security patches or updates will be released.",
+    fix: "Migrate to @solana/kit which does not depend on this package.",
+  },
+  {
+    package: "@metaplex/js",
+    versions: "*",
+    severity: "high",
+    title: "Deprecated Metaplex SDK",
+    detail: "Original Metaplex JS SDK, superseded by @metaplex-foundation/js and then by Umi.",
+    fix: "Migrate to @metaplex-foundation/umi",
+    url: "https://github.com/metaplex-foundation/umi",
+  },
+  {
+    package: "@metaplex-foundation/js",
+    versions: "*",
+    severity: "high",
+    title: "Deprecated Metaplex SDK",
+    detail: "Deprecated and archived in March 2025. Replaced by Umi framework.",
+    fix: "Migrate to @metaplex-foundation/umi",
+    url: "https://github.com/metaplex-foundation/js-deprecated",
+  },
+  {
+    package: "@project-serum/anchor",
+    versions: "*",
+    severity: "high",
+    title: "Abandoned package (Project Serum org)",
+    detail: "The @project-serum organization is no longer maintained. Anchor moved to @coral-xyz.",
+    fix: "Replace with @coral-xyz/anchor",
+  },
+  {
+    package: "@project-serum/serum",
+    versions: "*",
+    severity: "high",
+    title: "Abandoned package (Project Serum org)",
+    detail: "The @project-serum organization is no longer maintained after the FTX collapse.",
+    fix: "Replace with @openbook-dex/openbook-v2 if needed",
+  },
+  {
+    package: "@project-serum/borsh",
+    versions: "*",
+    severity: "high",
+    title: "Abandoned package (Project Serum org)",
+    detail: "The @project-serum organization is no longer maintained.",
+    fix: "Replace with @coral-xyz/borsh",
+  },
+  {
+    package: "@project-serum/sol-wallet-adapter",
+    versions: "*",
+    severity: "high",
+    title: "Abandoned package (Project Serum org)",
+    detail: "The @project-serum organization is no longer maintained.",
+    fix: "Use @solana/connector (ConnectorKit) or @solana/wallet-adapter-base",
+  },
+];

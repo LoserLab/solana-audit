@@ -1,0 +1,15 @@
+{
+  "name": "mixed-project",
+  "version": "1.0.0",
+  "dependencies": {
+    "@solana/web3.js": "^1.95.8",
+    "@solana/kit": "^3.0.0",
+    "@coral-xyz/anchor": "^0.30.0"
+  },
+  "overrides": {
+    "bigint-buffer": "npm:bigint-buffer-safe@^1.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}

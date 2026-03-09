@@ -1,0 +1,52 @@
+import type { Rule } from "./types";
+
+export const criticalRules: Rule[] = [
+  {
+    package: "@solana/web3.js",
+    versions: "1.95.6 || 1.95.7",
+    severity: "critical",
+    title: "Supply chain attack: private key exfiltration",
+    detail: "Versions 1.95.6 and 1.95.7 contained malicious code that exfiltrated private keys. Approximately $164K SOL was stolen.",
+    fix: "Upgrade immediately to @solana/web3.js >=1.95.8",
+    cve: "CVE-2024-54134",
+    url: "https://github.com/solana-labs/solana-web3.js/security/advisories/GHSA-jcxm-7wvp-g6p5",
+  },
+  {
+    package: "bigint-buffer",
+    versions: "<=1.1.5",
+    severity: "critical",
+    title: "Buffer overflow in toBigIntLE()",
+    detail: "Passing null or invalid input to toBigIntLE() causes a buffer overflow that crashes the process (CVSS 7.5).",
+    fix: 'Add override: "bigint-buffer": "npm:bigint-buffer-safe@^1.0.0"',
+    cve: "CVE-2025-3194",
+    url: "https://github.com/advisories/GHSA-3gc7-fjrx-p6mg",
+  },
+  {
+    package: "elliptic",
+    versions: "<=6.6.1",
+    severity: "critical",
+    title: "Private key extraction vulnerability",
+    detail: "Multiple CVEs including private key extraction (CVE-2025-14505), signature malleability (CVE-2024-42461), and verification flaw (CVE-2024-48948).",
+    fix: "Use @noble/curves as a replacement, or apply overrides with elliptic-to-noble",
+    cve: "CVE-2025-14505",
+    url: "https://advisories.gitlab.com/pkg/npm/elliptic/CVE-2025-14505/",
+  },
+  {
+    package: "solana-systemprogram-utils",
+    versions: "*",
+    severity: "critical",
+    title: "Malicious package: transaction fee skimming",
+    detail: "Typosquatting package that silently adds a 2% fee to all transactions, routing funds to the attacker.",
+    fix: "Remove immediately. This is not an official Solana package.",
+    url: "https://socket.dev/npm/package/solana-systemprogram-utils",
+  },
+  {
+    package: "@kodane/patch-manager",
+    versions: "*",
+    severity: "critical",
+    title: "Malicious package: AI-generated wallet drainer",
+    detail: "AI-generated malicious package that drains wallet funds. Had 1,500+ downloads before removal.",
+    fix: "Remove immediately.",
+    url: "https://thehackernews.com/2025/08/ai-generated-malicious-npm-package.html",
+  },
+];
