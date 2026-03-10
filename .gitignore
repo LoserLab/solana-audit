@@ -1,3 +1,5 @@
 node_modules/
 dist/
 *.tsbuildinfo
+social/*
+!social/heathen-solana-audit-card.png
