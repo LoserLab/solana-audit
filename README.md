@@ -1,5 +1,9 @@
 # solana-audit
 
+<p align="center">
+  <img src="social/heathen-solana-audit-card.png" alt="solana-audit" width="100%">
+</p>
+
 Solana-specific dependency auditor. Catches abandoned packages, archived repos, deprecated APIs, and known malicious packages that `npm audit` misses.
 
 Zero network requests. Built-in registry. Instant results.
@@ -102,10 +106,18 @@ npx solana-audit --fix
 
 Detects your package manager (npm, yarn, pnpm) and adds the correct override format.
 
-## Related Tools
+## Part of the Solana Migration Toolkit
 
-- [bigint-buffer-safe](https://github.com/LoserLab/bigint-buffer-safe): Drop-in fix for CVE-2025-3194
-- [solana-codemod](https://github.com/LoserLab/solana-codemod): Automated @solana/web3.js v1 to @solana/kit migration
+Four tools that work together to get your project from web3.js v1 to Kit v2:
+
+| Tool | What it does |
+|------|-------------|
+| [solana-deps](https://github.com/LoserLab/solana-deps) | Trace why legacy packages are in your tree |
+| **solana-audit** (this tool) | Catch CVEs and deprecated APIs that `npm audit` misses |
+| [solana-codemod](https://github.com/LoserLab/solana-codemod) | Auto-migrate code from web3.js v1 to Kit v2 |
+| [bigint-buffer-safe](https://github.com/LoserLab/bigint-buffer-safe) | Drop-in CVE fix for bigint-buffer |
+
+**Recommended workflow:** `solana-deps` (find what's legacy) -> `solana-audit` (check for vulnerabilities) -> `solana-codemod` (fix the code) -> `solana-audit` (verify the result).
 
 ## Author
 
